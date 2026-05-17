@@ -8,8 +8,8 @@ const footerLinks = {
     { label: "About Us", href: "/about" },
     { label: "Our Mission", href: "/about" },
     { label: "Careers", href: "/about" },
-    { label: "Blog", href: "/" },
-    { label: "Press", href: "/" },
+    // { label: "Blog", href: "/" },
+    // { label: "Press", href: "/" },
   ],
   Courses: [
     { label: "Bihar Board 12th", href: "/courses" },
@@ -19,17 +19,14 @@ const footerLinks = {
     { label: "Foundation Courses", href: "/courses" },
   ],
   Support: [
-    { label: "Contact Us", href: "/contact" },
+    { label: "Contact Us", href: "/#contact" },
     { label: "Help Center", href: "/" },
-    { label: "Student Forum", href: "/" },
-    { label: "App Download", href: "/" },
-    { label: "Refer & Earn", href: "/" },
   ],
   Legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
     { label: "Refund Policy", href: "/refund" },
-    { label: "Cookie Policy", href: "/privacy" },
+    // { label: "Cookie Policy", href: "/privacy" },
   ],
 };
 
@@ -155,7 +152,7 @@ export default function Footer() {
                 placeholder="Enter your email"
                 className="flex-1 md:w-64 px-4 py-3 rounded-xl bg-transparent border border-[var(--card-border)] text-[var(--fg-color)] placeholder-[var(--text-muted)] text-sm input-focus"
               />
-              <button 
+              <button
                 onClick={() => toast.success("Subscribed successfully! 🚀")}
                 className="btn-primary px-5 py-3 rounded-xl text-white font-semibold text-sm flex-shrink-0 cursor-pointer"
               >
