@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1",
 };
 
-import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+// import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 export default function RootLayout({
   children,
@@ -54,7 +54,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                if (localStorage.theme === 'dark') {
                   document.documentElement.classList.add('dark')
                 } else {
                   document.documentElement.classList.remove('dark')
@@ -68,7 +68,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
           <Toaster position="bottom-right" toastOptions={{ duration: 4000, style: { background: 'var(--card-bg)', color: 'var(--fg-color)', border: '1px solid var(--card-border)' } }} />
-          <WhatsAppFloat />
+          {/* <WhatsAppFloat /> */}
         </ThemeProvider>
       </body>
     </html>

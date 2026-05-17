@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 import { Menu, X, BookOpen, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ThemeToggle } from "./ThemeToggle";
+// import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Courses", href: "/courses" },
   { label: "Faculty", href: "/#faculty" },
   { label: "Testimonials", href: "/#testimonials" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -38,11 +38,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "py-3 bg-[var(--bg-color)]/90 backdrop-blur-xl border-b border-[var(--card-border)] shadow-sm"
-          : "py-5 bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "py-3 bg-[var(--bg-color)]/90 backdrop-blur-xl border-b border-[var(--card-border)] shadow-sm"
+        : "py-5 bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -72,11 +71,10 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
-                    isActive
-                      ? "text-[var(--color-brand-blue-light)] bg-[var(--color-brand-blue)]/10"
-                      : "text-[var(--text-muted)] hover:text-[var(--fg-color)] hover:bg-[var(--card-border)]"
-                  }`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${isActive
+                    ? "text-[var(--color-brand-blue-light)] bg-[var(--color-brand-blue)]/10"
+                    : "text-[var(--text-muted)] hover:text-[var(--fg-color)] hover:bg-[var(--card-border)]"
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -86,7 +84,7 @@ export default function Navbar() {
 
           {/* CTA & Theme Button */}
           <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <Link
               href="/courses"
               className="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold text-white cursor-pointer"
@@ -97,7 +95,7 @@ export default function Navbar() {
 
           <div className="hidden items-center md:flex" />
           <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             {/* Mobile Menu Button */}
             <button
               id="mobile-menu-btn"
@@ -121,11 +119,10 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
-                      isActive
-                        ? "text-[var(--color-brand-blue-light)] bg-[var(--color-brand-blue)]/10"
-                        : "text-[var(--text-muted)] hover:text-[var(--fg-color)] hover:bg-[var(--card-border)]"
-                    }`}
+                    className={`block w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${isActive
+                      ? "text-[var(--color-brand-blue-light)] bg-[var(--color-brand-blue)]/10"
+                      : "text-[var(--text-muted)] hover:text-[var(--fg-color)] hover:bg-[var(--card-border)]"
+                      }`}
                   >
                     {link.label}
                   </Link>
