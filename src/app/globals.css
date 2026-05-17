@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  
+  /* Brand Colors */
+  --color-brand-blue: #2563eb;
+  --color-brand-blue-light: #3b82f6;
+  --color-brand-blue-dark: #1d4ed8;
+  
+  --color-brand-red: #dc2626;
+  --color-brand-red-light: #ef4444;
+  --color-brand-red-dark: #b91c1c;
+
+  /* Theme variables defined below */
+  --color-background: var(--bg-color);
+  --color-foreground: var(--fg-color);
+  --color-card: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--text-muted);
+}
+
+:root {
+  /* Light Mode Variables - Crisp Pure White & Slate */
+  --bg-color: #ffffff;
+  --fg-color: #0f172a;
+  --card-bg: #f8fafc;
+  --card-border: #e2e8f0;
+  --text-muted: #475569;
+}
+
+.dark {
+  /* Dark Mode Variables - Rich Deep Pitch Black */
+  --bg-color: #000000;
+  --fg-color: #f8fafc;
+  --card-bg: #0b0f19;
+  --card-border: #1e293b;
+  --text-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Component Classes */
+.card-premium {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.dark .card-premium {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}
+
+.card-premium:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-brand-blue-light);
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.15);
+}
+
+.dark .card-premium:hover {
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--color-brand-red);
+  color: #ffffff;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--color-brand-blue);
+  color: #ffffff;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-brand-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.3);
+}
+
+/* Input focus styles */
+.input-focus {
+  background-color: var(--card-bg);
+  color: var(--fg-color);
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+.input-focus:focus {
+  border-color: var(--color-brand-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
